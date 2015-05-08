@@ -8,13 +8,14 @@
 	href="js/bower_components/angular-material/angular-material.css" />
 <title>Insert title here</title>
 </head>
-<body ng-controller="LoginController">
+<body ng-controller="LoginController" id="loginBody" >
 
 	<div layout="column" style="margin:100px; padding: 100px"> 
 	<md-toolbar class="md-primary">
 	<h1 class="md-toolbar-tools">Logowanie</h1>
 	</md-toolbar> <md-content layout-padding>
-	<form action="/EventTracker/auth" method="POST" >
+	<div class="alert alert-danger" role="alert" ng-show="loginError">{{loginError}}</div>
+	<form ng-submit="login()" >
 		<md-input-container> <label>Użytkownik</label> <input ng-model="credentials.username"
 			 required name="username"
 			>

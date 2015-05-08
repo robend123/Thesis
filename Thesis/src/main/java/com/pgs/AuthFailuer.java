@@ -17,8 +17,8 @@ public class AuthFailuer extends SimpleUrlAuthenticationFailureHandler{
 	public void onAuthenticationFailure(HttpServletRequest request,
 			HttpServletResponse response, AuthenticationException exception)
 			throws IOException, ServletException {
-		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		response.getWriter().write("asdasd");
+		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED, "Access Denied");
+		//response.getWriter().write("asdasd");
 	}
 	
 	
